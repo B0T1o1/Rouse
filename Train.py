@@ -76,7 +76,7 @@ class PricePredictor(nn.Module):
         return x
 
 class Trainer:
-    def __init__(self, model, data_loader, lr=0.001, epochs=1000):
+    def __init__(self, model, data_loader, lr=0.001, epochs=10000):
         self.model = model
         self.criterion = nn.MSELoss()
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=lr)
