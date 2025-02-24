@@ -101,7 +101,7 @@ def Mine_tweets(queries,min_tweets):
         all_tweets = asyncio.run(scraper.scrape_tweets())
         
         df = pd.DataFrame(all_tweets, columns=[ "username", "followers_count", "text", "retweet_count", "like_count" ,'view_count','tags',"Date"])
-        df.to_csv('Twitter_scraper/twitter_data.csv',mode='a',header=False)
+        df.to_csv('twitter_data.csv',mode='a',header=False)
         #try:tweet_count = df.iloc[-1]['tweet_count']
         #except IndexError:
         #    tweet_count = pd.read_csv('twitter_data.csv')['tweet_count'].iloc[-1]
