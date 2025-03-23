@@ -123,7 +123,7 @@ class Trainer:
             r2 = r2_score( actual_prices, predicted_prices)
             total, max_total, correct_per = self.sim_year(predicted_prices, self.data_loader.start_prices_test, actual_prices)
 
-            print((sum( ((s<a) for  s,a in zip(self.data_loader.start_prices_test , actual_prices))) / len(actual_prices))*100)
+            
             print(f'Ratio made: {total:.3f} | If always correct: {max_total:.3f} | If left in during: {self.data_loader.if_left:.3f} | Percentage Movement correct {correct_per:.3f}% ')
             print(f'MSE: {mse:.4f} | R² Score: {r2:.4f}')
             return correct_per,total
